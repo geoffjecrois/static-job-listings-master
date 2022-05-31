@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+:root {
+    --primary : hsl(180, 29%, 50%);
+    --background : hsl(180, 52%, 96%);
+    --filter-tablets : hsl(180, 31%, 95%);
+    --dark-cyan : hsl(180, 8%, 52%);
+    --very-dark-cyan :  hsl(180, 14%, 20%);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    background-image: url(./images/bg-header-mobile.svg);
+    height: 156px;
+}
+
+.selected-tags-wrapper {
+    display: none;
+    position: relative;
+    gap : 1.4rem;
+    flex-wrap: wrap;
+    bottom : -80px;
+    width : 85%;
+    padding : .5rem;
+    background-color: white;
+    box-shadow: 0px 5px 20px -5px var(--primary);
+    z-index: 1;
+    
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+
+
+.selected-tags {
+    background-color: var(--filter-tablets);
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .4rem;
+    border: 0px;
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+    transition: 150ms ease-in;   
+}
+
+.selected-tags::after {
+    content: "x";
+    position: relative;
+    width : 20px;
+    right : -20px;
+    top: 0px;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+    background-color: var(--primary);
+    font-weight: 700;
+    padding: .52rem;
+    transition: 150ms ease-in background-color; 
+
+    
+}
+
+.selected-tags:hover::after {
+    background-color: grey;
+
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    gap: 1rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 5px 20px -5px var(--primary);
+    padding: 35px 10px 10px 10px;
+    width : 85%;
+    
+}
+
+
+
+.company-logo {
+    position: absolute;
+    top: -25px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.card-first-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.company-name {
+    font-size: 1rem;
+    color : var(--primary)
+}
+
+.status-btn {
+    border: 0px;
+    border-radius: 20px;
+    padding: 9px;
+    font-size: .8rem;
+    line-height: .1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.new-btn {
+    display: none;
+    background-color: var(--primary);
+}
+
+.featured-btn {
+    display: none;
+    background-color: var(--very-dark-cyan);
+    
+}
+
+.featured-card {
+    border-left: 4px solid var(--primary);
+}
+
+.display {
+    display: block;
+}
+
+.job-title {
+    font-weight: 700;
+    color: var(--very-dark-cyan)
+}
+
+.job-characteristics {
+    color : var(--dark-cyan);
+    font-weight: 300;
+}
+
+.divider {
+    align-self: center;
+    height: 0.5px;
+    width: 100%;
+    background-color: var(--dark-cyan);
+}
+
+.tag-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap : .8rem;
+    padding-bottom : 1rem;
+}
+
+
+
+.tag {
+    background-color: var(--filter-tablets);
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .4rem;
+    border: 0px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 150ms ease-in;
+}
+
+.tag:hover,
+.active {
+    background-color: var(--primary);
+    color: white;
+
+}
+
