@@ -43,6 +43,7 @@ main {
     align-items: center;
     flex-direction: column;
     background-color: var(--background);
+    padding-top: 1rem;
 }
 
 
@@ -52,7 +53,7 @@ main {
     color: var(--primary);
     font-size: 1rem;
     font-weight: 500;
-    padding: .4rem;
+    padding: .25rem;
     border: 0px;
     border-radius: 5px 0px 0px 5px;
     cursor: pointer;
@@ -68,8 +69,10 @@ main {
     color: white;
     border-radius: 0px 5px 5px 0px;
     background-color: var(--primary);
-    font-weight: 700;
-    padding: .52rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .25rem;
+
     transition: 150ms ease-in background-color; 
 
     
@@ -93,9 +96,7 @@ main {
     box-shadow: 0px 5px 20px -5px var(--primary);
     padding: 35px 10px 10px 10px;
     width : 85%;
-    
 }
-
 
 
 .company-logo {
@@ -192,3 +193,83 @@ main {
 
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--very-dark-cyan);
+    background-color: var(--background);
+    padding : 1rem;
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width:900px) {
+    .card {
+        display: grid;
+        grid-template-columns: 70px 1fr 1fr;
+        padding : 20px;
+        gap: 10px;
+
+        
+    }
+
+    .company-logo {
+        position: absolute;
+        top: 25%;
+        left: 15px;
+        /* grid-row-start: 2;
+        justify-content: center;
+        align-self: center; */
+
+    }
+
+    .card-first-line {
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
+    .job-title {
+        grid-column-start: 2;
+        grid-row-start:2;
+    }
+
+    .job-characteristics {
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+
+    .tag-wrapper {
+        grid-row: 1 / span 3;
+        grid-column: 3;
+        padding: 0px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .selected-tags-wrapper {
+        padding : 1rem;
+    }
+
+    .selected-tags {
+        background-color: var(--filter-tablets);
+        color: var(--primary);
+        font-size: 1rem;
+        font-weight: 500;
+        padding: .5rem;
+    }
+    
+    .selected-tags::after {
+        padding: .5rem;
+
+    }
+    
+}

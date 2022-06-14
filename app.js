@@ -8,14 +8,15 @@ async function fetchData() {
     }
 }
 
+const main = document.querySelector('main');
 let selectedTagsWrapper = document.querySelector('.selected-tags-wrapper');
 let selectedTags = [];
 
 
 
+
 async function createCards() {
     const fetchedData = await fetchData();
-    const main = document.querySelector('main');
 
     const data = filterByTags (fetchedData, selectedTags);
 
@@ -84,8 +85,10 @@ async function createCards() {
 
 
 function filterByTags(data, tags) {
-    return data.filter(job => tags.every(tag => Object.values(job.tools).includes(tag)))
+    
+    return data.filter(job => tags.every(tag => Object.values(job).includes(tag)))
     // return data.filter(job => tags.every(tag => Object.values(job).includes(tag)))
+    
 }
 
 
@@ -106,7 +109,8 @@ function deleteTag(tag) {
     let index = selectedTags.indexOf(tag.innerHTML);
     tag.remove();
     selectedTags.splice(index, 1);
-    
+    main.innerHTML = "";
+    createCards();
 
     if (selectedTags.length === 0) selectedTagsWrapper.style.display = "none";
 }
